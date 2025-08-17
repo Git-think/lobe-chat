@@ -123,7 +123,7 @@ FROM scratch
 COPY --from=app / /
 
 ENV NODE_ENV="production" \
-    NODE_OPTIONS="--dns-result-order=ipv4first --use-openssl-ca" \
+    NODE_OPTIONS="--dns-result-order=ipv4first --use-openssl-ca --max-old-space-size=256" \
     NODE_EXTRA_CA_CERTS="" \
     NODE_TLS_REJECT_UNAUTHORIZED="" \
     SSL_CERT_DIR="/etc/ssl/certs/ca-certificates.crt"
